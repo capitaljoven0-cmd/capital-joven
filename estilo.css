@@ -1,0 +1,200 @@
+/* Capital Joven - hoja de estilo unica.
+   Los colores salen del mismo sistema que los videos (motion/src/theme.jsx)
+   para que el sitio y el canal se vean de la misma familia. */
+
+:root {
+  --bg: #0a0c0f;
+  --bg-card: #141a1c;
+  --ink: #f4f1ea;
+  --ink-dim: #8a9794;
+  --brand: #4e6e6a;
+  --brand-bright: #86cfc0;
+  --accent: #ff5c35;
+  --line: #232c2e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Montserrat, system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.envoltorio {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Encabezado --- */
+
+header {
+  border-bottom: 1px solid var(--line);
+  padding: 32px 0;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.marca img {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+}
+
+.marca span {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+/* --- Portada --- */
+
+.principal {
+  padding: 72px 0 40px;
+}
+
+h1 {
+  font-size: clamp(38px, 7vw, 60px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 24px;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--brand-bright);
+}
+
+.entrada {
+  font-size: 21px;
+  color: var(--ink-dim);
+  margin: 0 0 40px;
+  max-width: 600px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand-bright);
+  margin: 64px 0 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 36px 0 12px;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+a {
+  color: var(--brand-bright);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+ul {
+  padding-left: 22px;
+  margin: 0 0 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* --- Enlaces legales en portada ---
+   TikTok exige que privacidad y terminos se vean desde la portada sin
+   abrir ningun menu. Por eso van como bloque visible, no solo en el pie. */
+
+.legales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 28px 0 0;
+}
+
+.legales a {
+  display: inline-block;
+  padding: 13px 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-card);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.legales a:hover {
+  border-color: var(--brand-bright);
+  color: var(--brand-bright);
+}
+
+.tarjeta {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px 30px;
+  margin: 0 0 20px;
+}
+
+.tarjeta p:last-child {
+  margin-bottom: 0;
+}
+
+.fecha {
+  color: var(--ink-dim);
+  font-size: 15px;
+  margin-bottom: 44px;
+}
+
+/* --- Pie --- */
+
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 90px;
+  padding: 32px 0 56px;
+  color: var(--ink-dim);
+  font-size: 15px;
+}
+
+footer a {
+  margin-right: 20px;
+}
+
+@media (max-width: 560px) {
+  body {
+    font-size: 17px;
+  }
+  .principal {
+    padding: 48px 0 32px;
+  }
+  .legales a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
